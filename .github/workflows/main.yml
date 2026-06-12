@@ -1,1 +1,25 @@
+name: My First CI/CD Pipeline
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Make a new directory
+        run: mkdir my-new-folder
+
+      - name: Print learning message
+        run: echo "I am learning Github Actions"
